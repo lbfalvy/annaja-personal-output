@@ -1,1 +1,7 @@
-Work in progress...
+# Build
+
+Generate pages with
+
+```sh
+node generate.mjs
+```
