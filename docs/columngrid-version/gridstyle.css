@@ -105,6 +105,11 @@ main {
 img {
     width: 100%;
 }
+img:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
 
 .item {
     margin: 0.5rem 0;
