@@ -8,18 +8,25 @@ about the data itself than about the web.
  * @type {{
  *  title: string,
  *  source: string,
- *  content: string
+ *  size: [number, number],
+ *  about: string
  * }[]}
  */
 export const pics = [
   {
-    title: "Take-off!",
-    source: "https://www.fox46.com/wp-content/uploads/sites/109/2018/04/92a7b31a-FD_409A20Space20Shuttle20Anniversary20RECT0_1523400530953.jpg_5314903_ver1.0.jpg?w=1280&h=720&crop=1",
-    content: `
-lorem ipsum dolor sit amet
+    title: "This is the Title",
+    source: "/images/15.jpg",
+    size: [100, 100],
+    about: `
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, reprehenderit.
     `
   },
 ]
+
+/** Get a picture by its source */
+export function picBySource(source) {
+  return pics.find(pic => pic.source == source)
+}
 
 /** Get the identifier string associated with a picture
  * 
