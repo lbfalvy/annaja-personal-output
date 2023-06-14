@@ -2,7 +2,7 @@ import fs from "fs/promises"
 
 // ======== Config ========
 
-const root = 'docs/columngrid-version'
+const root = 'docs/'
 
 // ======== data and dataviews ========
 
