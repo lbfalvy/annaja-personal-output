@@ -4,8 +4,9 @@
   "description": "- `/static` gets copied over to the output directory, client-side data such as HTML, CSS and browser JS should be written here. - `/src` contains all generator code - `/src/views` contains functions that build HTML. These should only be concerned with bridging between data and presentation",
   "main": "index.js",
   "scripts": {
-    "build": "node ./src/generate.mjs",
-    "dev": "concurrently \"http-server ./docs\" \"nodemon ./src/generate.mjs  --ignore docs/ --ext '*'\""
+    "publish": "node ./bin/publish.mjs",
+    "build": "node ./bin/generate.mjs",
+    "dev": "concurrently \"http-server ./docs\" \"nodemon ./bin/generate.mjs  --ignore docs/ --ext '*'\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "concurrently": "^8.2.0",
     "http-server": "^14.1.1",
+    "isomorphic-git": "^1.24.0",
     "nodemon": "^2.0.22"
   }
 }
