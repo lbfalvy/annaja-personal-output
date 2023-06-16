@@ -43,15 +43,16 @@ else {
     ?.slice(branchArgPrefix.length)?.trim() // just the value if exists
     ?? "production"; // or "production" by default
   const dotenv = await loadDotEnv(process.cwd());
+  const offline = process.argv.includes("--offline");
   const username = dotenv.GH_USER ?? process.env.GH_USER;
-  if (username === undefined) {
+  if (!offline && username === undefined) {
     throw new Error(
       "Please place your github username in"
     + " a new line in the .env file as GH_USER=<token>"
     );
   }
   const password = dotenv.GH_TOKEN ?? process.env.GH_TOKEN;
-  if (password === undefined) {
+  if (!offline && password === undefined) {
     throw new Error(
       "Please place your github personal access token in"
     + " a new line in the .env file as GH_TOKEN=<token>"
@@ -60,6 +61,7 @@ else {
   await publish({
     targetBranch, pubpath: "docs",
     generate: () => generate(),
-    onAuth: () => ({ username, password })
+    onAuth: offline ? undefined : () => ({ username, password })
   })
+  console.log(`Published in offline mode, please push ${targetBranch} manually`)
 }

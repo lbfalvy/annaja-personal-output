@@ -1,9 +1,7 @@
 import process from "process"
-import path from "path"
 import fs from "fs/promises"
 import http from "isomorphic-git/http/node/index.js"
 import isogit from "isomorphic-git"
-import { generate } from "./generate.mjs"
 
 const deps = { fs, http };
 
@@ -34,7 +32,7 @@ async function isClean(cfg) {
  *  oauth2format: string,
  *  generate: () => Promise<void>,
  *  pubpath: string | string[],
- *  onAuth: import("isomorphic-git").AuthCallback
+ *  onAuth?: import("isomorphic-git").AuthCallback
  *  commitMessage?: string
  *  remote?: string
  *  dir?: string
@@ -80,7 +78,7 @@ export async function publish(opts) {
       message: commitMessage,
       parent: [] // orphan commit
     });
-    await isogit.push({
+    if (onAuth !== undefined) await isogit.push({
       ...cfg,
       ref: targetBranch,
       remoteRef: `refs/heads/${targetBranch}`,
