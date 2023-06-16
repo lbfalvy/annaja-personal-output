@@ -27,6 +27,16 @@ async function isClean(cfg) {
 
 /** Publish a folder to another branch
  * 
+ * The target branch will be created if it doesn't exist yet. A single orphan commit will be created
+ * which contains just the specified folder and nothing else. The history of the target branch will
+ * be destroyed.
+ * 
+ * If `onAuth` is provided, the target branch will be pushed to the specified remote or origin by
+ * default. If your remote allows anonymous writes, `onAuth` can return undefined. If `onAuth` is
+ * omitted, no push is attempted.
+ * 
+ * The function attempts to restore the starting branch before throwing in case of errors.
+ * 
  * @typedef {{
  *  username?: string | undefined;
  *  password?: string | undefined;
