@@ -20,6 +20,7 @@
   "homepage": "https://github.com/lbfalvy/annaja-personal-output#readme",
   "devDependencies": {
     "concurrently": "^8.2.0",
+    "git-host-publish": "^1.0.4",
     "http-server": "^14.1.1",
     "isomorphic-git": "^1.24.0",
     "nodemon": "^2.0.22"

@@ -1,8 +1,9 @@
-import process from "process"
-import { publish } from "../src/publish.mjs"
-import path from "path"
-import fs from "fs/promises"
+import process from "process";
+import { publish } from "git-host-publish";
+import path from "path";
+import fs from "fs/promises";
 import { generate } from "../src/generate.mjs";
+import http from "isomorphic-git/http/node/index.js";
 
 /*
 Publish the website to Github Pages. By default, updates are pushed to public.
@@ -59,7 +60,10 @@ else {
     );
   }
   await publish({
-    targetBranch, pubpath: "docs",
+    fs, http,
+    dir: process.cwd(),
+    targetBranch,
+    pubpath: "docs",
     generate: () => generate(),
     onAuth: offline ? undefined : () => ({ username, password })
   })
