@@ -1,6 +1,5 @@
-import { writePage } from "../write.mjs"
-import { getPicID } from "../data.mjs"
 import { mainTpl } from "../templates/main.mjs";
+import { htmlTpl } from "../templates/html.mjs";
 
 /** Page for a given picture
  * @param {{
@@ -9,10 +8,11 @@ import { mainTpl } from "../templates/main.mjs";
  *  size: [number, number],
  *  about: string
  * }} pic 
+ * @returns {string}
  */
-export async function genPicPage(pic) {
-  await writePage(`/works/${getPicID(pic)}`, /*html*/`
-    <title>${pic.title}</title>
+export function genPicPage(pic) {
+  return htmlTpl(/*html*/`
+    <title>annaja - ${pic.title}</title>
     <link rel="stylesheet" href="/works.css">
   `, mainTpl(/*html*/`
     <figure><img src="${pic.source}" alt=""></figure>

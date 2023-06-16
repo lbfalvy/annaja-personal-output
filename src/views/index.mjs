@@ -1,10 +1,12 @@
 import { imgLink } from "../components/imgLink.mjs";
+import { htmlTpl } from "../templates/html.mjs";
 import { mainTpl } from "../templates/main.mjs";
-import { writePage } from "../write.mjs";
 
-/** The front page of the website */
-export async function genIndexPage() {
-  await writePage("", /*html*/`
+/** The front page of the website
+ * @returns {string}
+ */
+export function genIndexPage() {
+  return htmlTpl(/*html*/`
     <title>ANNAJA-PERSONAL OUTPUT</title>
     <link rel="stylesheet" href="gridstyle.css">
   `, mainTpl(/*html*/`
