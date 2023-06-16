@@ -26,17 +26,27 @@ async function isClean(cfg) {
 }
 
 /** Publish a folder to another branch
+ * 
+ * @typedef {{
+ *  username?: string | undefined;
+ *  password?: string | undefined;
+ *  headers?: {
+ *      [x: string]: string;
+ *  } | undefined;
+ *  cancel?: boolean | undefined;
+ * }} GitAuth Return value of `onAuth` copied from `isomorphic-git`
+ * 
  * @param {{
- *  targetBranch: string,
- *  token: string,
- *  oauth2format: string,
- *  generate: () => Promise<void>,
- *  pubpath: string | string[],
- *  onAuth?: import("isomorphic-git").AuthCallback
- *  commitMessage?: string
- *  remote?: string
- *  dir?: string
- * }} opts
+ *  targetBranch: string;
+ *  generate: () => Promise<void>;
+ *  pubpath: string | string[];
+ *  onAuth?: (url: string, auth: GitAuth) =>
+ *    void | GitAuth
+ *    | Promise<void | GitAuth>;
+ *  commitMessage?: string;
+ *  remote?: string;
+ *  dir?: string;
+ * }} opts Parameters to Publish
  */
 export async function publish(opts) {
   // mandatory parameters
