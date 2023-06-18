@@ -1,7 +1,7 @@
 import process from "process";
 import { publish } from "git-host-publish";
 import path from "path";
-import fs from "fs/promises";
+import fs from "fs";
 import { generate } from "../src/generate.mjs";
 import http from "isomorphic-git/http/node/index.js";
 
@@ -20,7 +20,7 @@ If this is not desirable, specify a new branch with --target-branch=some-branch
 async function loadDotEnv(dir) {
   const envfile = path.join(dir, ".env")
   try {
-    const txt = await fs.readFile(envfile, { encoding: "utf-8" });
+    const txt = await fs.promises.readFile(envfile, { encoding: "utf-8" });
     const lines = txt.split("\n");
     // the parts after the first # in each line are comments
     const data = lines.filter(l => !l.trimStart().startsWith("#"))
@@ -60,7 +60,7 @@ else {
     );
   }
   await publish({
-    fs, http,
+    fs, http, path,
     dir: process.cwd(),
     targetBranch,
     pubpath: "docs/",
