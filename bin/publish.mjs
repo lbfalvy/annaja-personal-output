@@ -63,9 +63,10 @@ else {
     fs, http,
     dir: process.cwd(),
     targetBranch,
-    pubpath: "docs",
+    pubpath: "docs/",
     generate: () => generate(),
     onAuth: offline ? undefined : () => ({ username, password })
   })
   if (offline) console.log(`Published in offline mode, please push ${targetBranch} manually`)
+  else console.log(`Successfully published ${targetBranch}`)
 }
