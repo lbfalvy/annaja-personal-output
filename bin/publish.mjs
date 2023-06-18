@@ -67,5 +67,5 @@ else {
     generate: () => generate(),
     onAuth: offline ? undefined : () => ({ username, password })
   })
-  console.log(`Published in offline mode, please push ${targetBranch} manually`)
+  if (offline) console.log(`Published in offline mode, please push ${targetBranch} manually`)
 }
