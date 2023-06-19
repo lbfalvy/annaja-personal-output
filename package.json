@@ -1,28 +1,14 @@
 {
-  "name": "annaja-personal-output",
-  "version": "1.0.0",
-  "description": "- `/static` gets copied over to the output directory, client-side data such as HTML, CSS and browser JS should be written here. - `/src` contains all generator code - `/src/views` contains functions that build HTML. These should only be concerned with bridging between data and presentation",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "publish": "node ./bin/publish.mjs",
     "build": "node ./bin/generate.mjs",
     "dev": "concurrently \"http-server ./docs\" \"nodemon ./bin/generate.mjs  --ignore docs/ --ext '*'\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lbfalvy/annaja-personal-output.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lbfalvy/annaja-personal-output/issues"
-  },
-  "homepage": "https://github.com/lbfalvy/annaja-personal-output#readme",
   "devDependencies": {
     "concurrently": "^8.2.0",
     "git-host-publish": "^1.0.6",
     "http-server": "^14.1.1",
-    "isomorphic-git": "^1.24.0",
     "nodemon": "^2.0.22"
   }
 }
