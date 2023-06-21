@@ -7,15 +7,15 @@
 }
 
 body {
-    
+
     padding: 1.5rem 0 0 0;
-    display:grid;
+    display: grid;
     row-gap: 2rem;
-    background-image: linear-gradient(to bottom, hsl(0,0%,10%), hsl(0,0%,5%));
+    background-image: linear-gradient(to bottom, hsl(0, 0%, 10%), hsl(0, 0%, 5%));
     background-color: hsl(0, 0%, 5%);
     background-repeat: no-repeat;
-    
-    
+
+
     font-family: 'Roboto', sans-serif;
 }
 
@@ -44,6 +44,11 @@ a {
     text-decoration: none;
     margin-bottom: 0.3rem;
     color: hsl(0, 0%, 50%);
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: hsl(0, 74%, 27%);
 }
 
 /* mobile menu toggle button */
@@ -94,37 +99,139 @@ a {
 main {
     display: grid;
     gap: 2rem;
-    padding-inline:  2rem;
-    /* padding-bottom:  2rem; */
+    padding-inline: 2rem;
 
 }
+
+#prevImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100svh;
+    width: 30%;
+    background-color: hsla(0, 63%, 26%, 0);
+    color: hsla(0, 63%, 26%, 0);
+    border: none;
+    cursor: pointer;
+}
+#nextImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100svh;
+    width: 30%;
+    background-color: hsla(0, 63%, 26%, 0);
+    color: hsla(0, 63%, 26%, 0);
+    border: none;
+    cursor: pointer;
+
+
+}
+/* #prevImage,
+#nextImage {
+
+    aspect-ratio: 1 2;
+    color: hsl(0, 0%, 50%, 0.3);
+    background-color: hsla(0, 0%, 50%, 0);
+    border: none;
+    opacity: 0.5;
+    line-height: 0.2rem;
+}
+#prevImage {
+    border-top: 2px solid hsl(0, 1%, 73%, 0.5);
+    border-left: 2px solid hsl(0, 1%, 73%, 0.5);
+    border-bottom: 2px solid hsl(0, 1%, 73%, 0.5);
+}
+
+#nextImage {
+    border-top: 2px solid hsl(0, 1%, 73%, 0.5);
+    border-right: 2px solid hsl(0, 1%, 73%, 0.5);
+    border-bottom: 2px solid hsl(0, 1%, 73%, 0.5);
+}
+
+#prevImage {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+}
+#nextImage {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+}
+
+#prevImage p {
+    color: hsl(0, 0%, 50%, 0.2);
+
+}
+
+#nextImage p {
+    color: hsl(0, 0%, 50%, 0.2);
+
+}
+
+
+#prevImage:hover {
+
+    color: hsla(0, 0%, 100%, 1);
+    border-top: 2px solid hsl(0, 71%, 47%);
+    border-left: 2px solid hsl(0, 71%, 47%);
+    border-bottom: 2px solid hsl(0, 71%, 47%);
+}
+
+#nextImage:hover {
+    border-top: 2px solid hsl(0, 71%, 47%);
+    border-right: 2px solid hsl(0, 71%, 47%);
+    border-bottom: 2px solid hsl(0, 71%, 47%);
+}
+ */
+
+
+
+
 img {
     width: 100%;
 }
+
 article {
     display: grid;
     gap: 2rem;
     padding: 1rem;
     text-align: center;
 }
-.details, .details_title {
+
+.details,
+.details_title {
     display: grid;
     gap: 0.5em;
-
     
+
+
 }
-.details p, .details_title p {
-color:hsl(0, 0%, 50%);
-font-size: 0.7rem;
+
+.details p,
+.details_title p {
+    color: hsl(0, 0%, 50%);
+    font-size: 0.7rem;
 }
+
 .details_title span {
-color:hsl(0, 1%, 73%);
-font-size: 1rem;
-text-transform: uppercase;
+    color: hsl(0, 1%, 73%);
+    font-size: 1rem;
+    text-transform: uppercase;
 }
+
 .details span {
-color:hsl(0, 1%, 60%);
-font-size: 0.8rem;
+    color: hsl(0, 1%, 60%);
+    font-size: 0.8rem;
+}
+
+
+#slidenav {
+    display: grid;
+    grid-template-columns: auto auto;
+    ;
+    justify-content: space-around;
 }
 
 
@@ -132,25 +239,26 @@ font-size: 0.8rem;
 
 
 footer {
-    
+
     background-color: hsl(0, 0%, 9%);
     padding: 2rem 2rem;
     display: grid;
     justify-content: center;
-    
+
 }
 
 .sociallinks a {
     display: inline;
     margin: 0 1rem;
     font-size: 2rem;
-    
+
     color: hsla(0, 63%, 26%, 0.9);
     cursor: pointer;
 }
+
 .sociallinks a:hover {
     transition: 1s;
-    
+
     /* color: hsl(218, 45%, 22%); */
     color: hsl(0, 65%, 20%);
     cursor: pointer;
@@ -183,27 +291,37 @@ footer {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
     }
+
     body {
         height: 100vh;
         row-gap: 5rem;
     }
+
     main {
         grid-template-columns: 70% auto;
         /* grid-template-columns: 70% 20%; */
         padding: 0.5rem 3rem;
 
     }
+
     article {
         display: grid;
         align-content: center;
         padding: 2rem 0;
         text-align: center;
     }
-    .details, .details_title {
+
+    .details,
+    .details_title {
         display: grid;
         /* gap: 0.5em; */
-    
-        
+
+
+    }
+
+    img {
+        height: 600px;
+        object-fit: contain;
     }
 
 

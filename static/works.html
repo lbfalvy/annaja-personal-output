@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="portfolio website of painter AnnaJa">
+    <meta name="keywords"
+        content="contemporary art painter painting contemporary-art modern-painting artist contemporary-artist">
+    <title>ANNAJA-PERSONAL OUTPUT</title>
+    <link rel="stylesheet" href="works.css">
+    <script src="https://kit.fontawesome.com/383945ce77.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <h1 class="title"><a href="#">annaja</a></h1>
+            <div id="dropdown" class="dropdown-content">
+                <a href="#">about</a>
+                <a href="#">works</a>
+                <a href="#">contact</a>
+            </div>
+
+
+        </div>
+        <div class="menuToggle" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+    <main>
+        <figure id="imageHolder"><img id="slide" src="" alt=""></figure>
+        <!-- <figure><img src="images/1.jpg" alt=""></figure> -->
+        <article>
+
+            <div class="details_title">
+                <p>Title: </p><span id="title"></span>
+                <button id="prevImage" onclick="changeInd(-1)">prev</button>
+                <button id="nextImage" onclick="changeInd(1)">next</button>
+            </div>
+            <div class="details">
+                <p>Size: </p><span id="measuremnt"></span>
+
+            </div>
+            <div class="details">
+                <p>About: </p><span id="about"></span>
+
+            </div>
+
+        </article>
+
+    </main>
+    <div id="slidenav">
+       
+<!--         <button id="prevImage" onclick="changeInd(-1)">&#10094;</button>
+        <button id="nextImage" onclick="changeInd(1)">&#10095;</button> -->
+    </div>
+    <footer>
+        <!--      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem deserunt corrupti maxime ratione laudantium velit repudiandae dicta et quaerat doloremque, fugiat, nulla fuga! Eligendi enim beatae repudiandae nobis aspernatur laboriosam tenetur, nihil inventore doloremque ipsum totam asperiores, necessitatibus dolorum blanditiis natus velit fugiat alias! Eius pariatur perspiciatis tenetur in incidunt.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem deserunt corrupti maxime ratione laudantium velit repudiandae dicta et quaerat doloremque, fugiat, nulla fuga! Eligendi enim beatae repudiandae nobis aspernatur laboriosam tenetur, nihil inventore doloremque ipsum totam asperiores, necessitatibus dolorum blanditiis natus velit fugiat alias! Eius pariatur perspiciatis tenetur in incidunt.</p>
+        -->
+        <section class="sociallinks">
+            <a href="https://www.instagram.com/annaja_personal_output/" target="_blank" title="AnnaJa on Instagram"><i
+                    class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100070068163815" target="_blank"
+                title="AnnaJa on Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+        </section>
+    </footer>
+    <!--  mobile menu toggle: -->
+    <script>
+        function toggleMenu(x) {
+            x.classList.toggle("change");
+
+            let dropdown = document.getElementById("dropdown");
+            dropdown.classList.toggle("show");
+
+        } 
+    </script>
+    <script src="gallery.js"></script>
+</body>
+
+</html>
