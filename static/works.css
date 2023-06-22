@@ -100,14 +100,14 @@ main {
     display: grid;
     gap: 2rem;
     padding-inline: 2rem;
-
+    position: relative;
 }
 
 #prevImage {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100svh;
+    height: 100%;
     width: 30%;
     background-color: hsla(0, 63%, 26%, 0);
     color: hsla(0, 63%, 26%, 0);
@@ -118,7 +118,7 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100svh;
+    height: 100%;
     width: 30%;
     background-color: hsla(0, 63%, 26%, 0);
     color: hsla(0, 63%, 26%, 0);

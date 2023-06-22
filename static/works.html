@@ -32,14 +32,13 @@
         </div>
     </nav>
     <main>
+        <button id="prevImage" onclick="changeInd(-1)">prev</button>
+        <button id="nextImage" onclick="changeInd(1)">next</button>
         <figure id="imageHolder"><img id="slide" src="" alt=""></figure>
         <!-- <figure><img src="images/1.jpg" alt=""></figure> -->
         <article>
-
             <div class="details_title">
                 <p>Title: </p><span id="title"></span>
-                <button id="prevImage" onclick="changeInd(-1)">prev</button>
-                <button id="nextImage" onclick="changeInd(1)">next</button>
             </div>
             <div class="details">
                 <p>Size: </p><span id="measuremnt"></span>
