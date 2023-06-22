@@ -1,0 +1,25 @@
+name: Node.js Task
+
+on:
+  push:
+    branches:
+    - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm install
+      - run: git config user.name "CDBot by lbfalvy"
+      - run: git config user.email "lbfalvy@protonmail.com"
+      - run: npm run publish -- --offline
+      - run: git checkout production
+      - uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: production
+          force: true
