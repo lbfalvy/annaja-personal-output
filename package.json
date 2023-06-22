@@ -3,7 +3,7 @@
   "scripts": {
     "publish": "node ./bin/publish.mjs",
     "build": "node ./bin/generate.mjs",
-    "dev": "concurrently \"http-server ./docs\" \"nodemon ./bin/generate.mjs  --ignore docs/ --ext '*'\""
+    "dev": "concurrently \"http-server -c-1 ./docs\" \"nodemon ./bin/generate.mjs  --ignore docs/ --ext '*'\""
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
