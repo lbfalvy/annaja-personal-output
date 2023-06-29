@@ -7,8 +7,9 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
-    "git-host-publish": "^1.0.6",
+    "git-host-publish": "^2.0.0",
     "http-server": "^14.1.1",
+    "isomorphic-git": "^1.24.2",
     "nodemon": "^2.0.22"
   }
 }
