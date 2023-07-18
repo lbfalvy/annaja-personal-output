@@ -11,10 +11,14 @@ body {
     padding: 1.5rem 0 0 0;
     background-color: hsl(0, 0%, 90%);
     font-family: 'Roboto', sans-serif;
+    min-height: 100lvh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* navigation */
 nav {
+    flex: 0 0 auto;
     position: relative;
     display: grid;
     padding: 1rem;
@@ -28,6 +32,7 @@ nav {
 
 .title {
     font-size: 1rem;
+    font-weight: 400;
     margin-bottom: 0.3rem;
 }
 
@@ -83,8 +88,11 @@ a {
 
 /* footer */
 footer {
+    background-color: hsl(0, 0%, 60%);
     display: grid;
     justify-content: center;
+    flex: 0 0 auto;
+    padding: 2rem 2rem;
 }
 
 .sociallinks a {
@@ -94,12 +102,19 @@ footer {
     cursor: pointer;
 }
 
+.sociallinks a {
+    color: hsl(0, 65%, 20%, 0.5);
+}
+
 .sociallinks a:hover {
     transition: 1s;
     color: hsl(0, 65%, 20%);
     cursor: pointer;
 }
 
+main {
+    flex: 1 0 auto;
+}
 
 @media screen and (min-width: 750px) {
     footer {
@@ -126,11 +141,6 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
-    }
-
-    body {
-        height: 100vh;
-        row-gap: 5rem;
     }
 
     main {

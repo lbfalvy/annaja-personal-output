@@ -10,9 +10,9 @@ export function mainTpl(content) {
       <div class="nav">
         <h1 class="title"><a href="/">annaja</a></h1>
         <div id="dropdown" class="dropdown-content">
-          <a href="#">about</a>
-          <a href="#">works</a>
-          <a href="#">contact</a>
+          <a id="menu-about" href="#">about</a>
+          <a id="menu-works" href="#">works</a>
+          <a id="menu-contact" href="/contact">contact</a>
         </div>
       </div>
       <div class="menuToggle" onclick="toggleMenu(this)">

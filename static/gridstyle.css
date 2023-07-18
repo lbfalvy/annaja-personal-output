@@ -51,13 +51,10 @@ img {
     padding: 4rem 1.5rem;
 }
 
-footer {
-    background-color: hsl(0, 0%, 60%);
-    padding: 5rem 2rem;
-}
+/* overrides */
 
-.sociallinks a {
-    color: hsl(0, 65%, 20%, 0.5);
+.title {
+    font-weight: 600;
 }
 
 @media screen and (min-width: 750px) {
