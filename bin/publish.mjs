@@ -35,6 +35,19 @@ async function loadDotEnv(dir) {
   }
 }
 
+const docs = `
+Prepare a release bundle in a single commit with no history that overwrites the previous release
+bundle when pushed.
+
+Usage:
+$ node publish.mjs
+$ node publish.mjs --target-branch=production
+then
+$ git push origin production --force
+
+Since the new branch has no history, --force is needed.
+`
+
 if (process.argv.includes("--help")) console.log(docs);
 else {
   const branchArgPrefix = "--target-branch=";
@@ -43,30 +56,13 @@ else {
     .at(-1) // take the last occurrence
     ?.slice(branchArgPrefix.length)?.trim() // just the value if exists
     ?? "production"; // or "production" by default
-  const dotenv = await loadDotEnv(process.cwd());
-  const offline = process.argv.includes("--offline");
-  const username = dotenv.GH_USER ?? process.env.GH_USER;
-  if (!offline && username === undefined) {
-    throw new Error(
-      "Please place your github username in"
-    + " a new line in the .env file as GH_USER=<token>"
-    );
-  }
-  const password = dotenv.GH_TOKEN ?? process.env.GH_TOKEN;
-  if (!offline && password === undefined) {
-    throw new Error(
-      "Please place your github personal access token in"
-    + " a new line in the .env file as GH_TOKEN=<token>"
-    );
-  }
   await publish({
     fs, http, path,
     dir: process.cwd(),
     targetBranch,
     pubpath: "docs/",
-    generate: () => generate(),
-    onAuth: offline ? undefined : () => ({ username, password })
+    generate
   })
-  if (offline) console.log(`Published in offline mode, please push ${targetBranch} manually`)
-  else console.log(`Successfully published ${targetBranch}`)
+  console.log(`The release has been generated and written to ${targetBranch}. Please publish with`)
+  console.log(`git push origin ${targetBranch} --force`)
 }
