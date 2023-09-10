@@ -13,32 +13,34 @@ about the data itself than about the web.
  * }[]}
  */
 export const pics = [
-  {
-    title: "This is the Title",
-    source: "/images/15.jpg",
-    size: [100, 100],
-    about: `
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, reprehenderit.
-    `
-  },
+  { title: "lorem", source: "/images/1.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/2.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/3.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/4.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/5.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/6.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/7.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/8.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/9.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/10.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/11.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/12.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/13.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/14.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/15.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/16.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/17.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/18.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "lorem", source: "/images/19.jpg", size: [100, 100], about: "Lorum ipse" },
+  { title: "Dancer", source: "/images/Dancer70x100.jpg", size: [70, 100], about: "Lorum ipse" },
+  { title: "Pillars", source: "/images/Pillars80x100.jpg", size: [80, 100], about: "Lorum ipse" },
 ]
 
-/** Get a picture by its source
- * @param {string} source 
+/**
+ * Find the index of a given picture based on an image file
+ * @param {string} src path to the file
  */
-export function picBySource(source) {
-  if (typeof source !== "string") throw new Error("type error")
-  return pics.find(pic => pic.source == source)
-}
-
-/** Get the identifier string associated with a picture
- * 
- * This string is URL safe
- * @param {{ title: string }} pic  
- */
-export function getPicID(pic) {
-  if (typeof pic.title !== "string") throw new Error("type error")
-  return pic.title
-    .toLowerCase() // convert all to lowercase
-    .replace(/[^a-z0-9\-]/g, '_'); // any characters other than a-z or 0-9 become _
+export function picIdBySource(src) {
+  if (typeof src !== "string") throw new Error("type error")
+  return pics.findIndex(pic => pic.source == src)
 }

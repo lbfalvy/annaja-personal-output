@@ -1,5 +1,5 @@
 import { reset, writePage } from "./write.mjs"
-import { getPicID, pics } from "./data.mjs"
+import { pics } from "./data.mjs"
 import { genIndexPage } from "./views/index.mjs"
 import { genPicPage } from "./views/pic.mjs"
 import { genContactPage } from "./views/contact.mjs"
@@ -13,7 +13,14 @@ export async function generate() {
   await reset()
   await writePage("", genIndexPage())
   await writePage("/contact", genContactPage())
-  for (const pic of pics) {
-    await writePage(`/works/${getPicID(pic)}`, genPicPage(pic))
+  for (const id of pics.keys()) {
+    await writePage(picUrl(id), genPicPage(id))
   }
+}
+
+/** Get the URL of the picture in the given position
+ * @param {number} id Zero-based index of the image
+ */
+export function picUrl(id) {
+  return `/works/${id}`
 }

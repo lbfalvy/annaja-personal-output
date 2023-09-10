@@ -1,21 +1,25 @@
 import { mainTpl } from "../templates/main.mjs";
 import { htmlTpl } from "../templates/html.mjs";
+import { pics } from "../data.mjs";
+import { picUrl } from "../generate.mjs";
 
 /** Page for a given picture
- * @param {{
- *  title: string,
- *  source: string,
- *  size: [number, number],
- *  about: string
- * }} pic 
+ * @param {number} id 
  * @returns {string}
  */
-export function genPicPage(pic) {
+export function genPicPage(id) {
+  const pic = pics[id];
   return htmlTpl(/*html*/`
     <title>annaja - ${pic.title}</title>
     <link rel="stylesheet" href="/works.css">
   `, mainTpl(/*html*/`
-    <figure><img src="${pic.source}" alt=""></figure>
+    ${0 < id ? /*html*/`
+      <a id="prevImage" href="${picUrl(id - 1)}">prev</a>
+    ` :""}
+    ${id < pics.length - 1 ? /*html*/`
+      <a id="nextImage" href="${picUrl(id + 1)}">next</a>
+    ` :""}
+    <figure id="imageHolder"><img id="slide" src="${pic.source}" alt=""></figure>
     <!-- <figure><img src="images/1.jpg" alt=""></figure> -->
     <article>
       <div class="details_title">
