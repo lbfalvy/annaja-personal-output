@@ -2,7 +2,6 @@ import { pics } from "../data.mjs";
 import { picUrl } from "../generate.mjs";
 
 /** A page of the website
- * 
  * @param {string} content
  * @returns {string}
  */
@@ -13,7 +12,7 @@ export function mainTpl(content) {
       <div class="nav">
         <h1 class="title"><a href="/">annaja</a></h1>
         <div id="dropdown" class="dropdown-content">
-          <a id="menu-about" href="#">about</a>
+          <a id="menu-about" href="/about">about</a>
           <a id="menu-works" href="${picUrl(pics.length - 1)}">works</a>
           <a id="menu-contact" href="/contact">contact</a>
         </div>

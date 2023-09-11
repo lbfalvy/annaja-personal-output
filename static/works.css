@@ -9,8 +9,13 @@ a {
     transition: color 0.5s;
 }
 
-a:hover {
+a:not(.disabled):hover {
     color: hsl(0, 74%, 27%);
+}
+
+a.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 /* main */
@@ -22,92 +27,9 @@ main {
     position: relative;
 }
 
-#prevImage {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 30%;
-    background-color: hsla(0, 63%, 26%, 0);
-    color: hsla(0, 63%, 26%, 0);
-    border: none;
-    cursor: pointer;
+.nav_link.end {
+    visibility: hidden;
 }
-#nextImage {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 30%;
-    background-color: hsla(0, 63%, 26%, 0);
-    color: hsla(0, 63%, 26%, 0);
-    border: none;
-    cursor: pointer;
-
-
-}
-/* #prevImage,
-#nextImage {
-
-    aspect-ratio: 1 2;
-    color: hsl(0, 0%, 50%, 0.3);
-    background-color: hsla(0, 0%, 50%, 0);
-    border: none;
-    opacity: 0.5;
-    line-height: 0.2rem;
-}
-#prevImage {
-    border-top: 2px solid hsl(0, 1%, 73%, 0.5);
-    border-left: 2px solid hsl(0, 1%, 73%, 0.5);
-    border-bottom: 2px solid hsl(0, 1%, 73%, 0.5);
-}
-
-#nextImage {
-    border-top: 2px solid hsl(0, 1%, 73%, 0.5);
-    border-right: 2px solid hsl(0, 1%, 73%, 0.5);
-    border-bottom: 2px solid hsl(0, 1%, 73%, 0.5);
-}
-
-#prevImage {
-    position: absolute;
-    top: 1rem;
-    left: 0;
-}
-#nextImage {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-}
-
-#prevImage p {
-    color: hsl(0, 0%, 50%, 0.2);
-
-}
-
-#nextImage p {
-    color: hsl(0, 0%, 50%, 0.2);
-
-}
-
-
-#prevImage:hover {
-
-    color: hsla(0, 0%, 100%, 1);
-    border-top: 2px solid hsl(0, 71%, 47%);
-    border-left: 2px solid hsl(0, 71%, 47%);
-    border-bottom: 2px solid hsl(0, 71%, 47%);
-}
-
-#nextImage:hover {
-    border-top: 2px solid hsl(0, 71%, 47%);
-    border-right: 2px solid hsl(0, 71%, 47%);
-    border-bottom: 2px solid hsl(0, 71%, 47%);
-}
- */
-
-
-
 
 img {
     width: 100%;
@@ -124,6 +46,10 @@ article {
 .details_title {
     display: grid;
     gap: 0.5em;
+}
+
+.details.missing {
+    visibility: hidden;
 }
 
 .details p,
@@ -157,11 +83,24 @@ footer {
     color: hsla(0, 63%, 26%, 0.9);
 }
 
+@media screen and (max-width: 900px) {
+    #nav_stack {
+        display: block flex;
+        flex-direction: row;
+    }
+    #nav_stack div {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}
 @media screen and (min-width: 900px) {
+    main {
+        grid-template-areas: "picture nav ";
+    }
     article {
         display: grid;
         align-content: center;
-        padding: 2rem 0;
+        padding: 0 0;
         text-align: center;
     }
 
@@ -173,5 +112,15 @@ footer {
     img {
         height: 600px;
         object-fit: contain;
+    }
+    
+    #nav_stack {
+        position: fixed;
+        right: 20px;
+        top: 50vh;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        text-align: right;
     }
 }

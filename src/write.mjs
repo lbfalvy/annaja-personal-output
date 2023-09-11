@@ -7,6 +7,7 @@ output directory is ./data
 
 /** Trim a single `/` from the start and end of a path
  * @param {string} path 
+ * @returns {string}
  */
 function trimSlashes(path) {
   const startSkip = path.startsWith('/') ? 1 : 0;

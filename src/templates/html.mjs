@@ -1,5 +1,4 @@
 /** A HTML document
- * 
  * @param {string} head Contents of the <head> element
  * @param {string} body Contents of the <body> element
  * @param {Record<string, string>} meta Meta tags

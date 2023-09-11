@@ -3,6 +3,20 @@ import { htmlTpl } from "../templates/html.mjs";
 import { pics } from "../data.mjs";
 import { picUrl } from "../generate.mjs";
 
+/** A link that points to an image by ID if the ID is valid and not the current image
+ * @param {string} text
+ * @param {number} current 
+ * @param {number} target target index
+ * @returns {string}
+ */
+function navLink(text, current, target) {
+  if (Number.isInteger(target) && 0 <= target && target != current && target < pics.length) {
+    return /*html*/`<div><a class="nav_link" href="${picUrl(target)}">${text}</a></div>`
+  } else {
+    return /*html*/`<div><a class="nav_link disabled">${text}</a></div>`
+  }
+}
+
 /** Page for a given picture
  * @param {number} id 
  * @returns {string}
@@ -13,14 +27,13 @@ export function genPicPage(id) {
     <title>annaja - ${pic.title}</title>
     <link rel="stylesheet" href="/works.css">
   `, mainTpl(/*html*/`
-    ${0 < id ? /*html*/`
-      <a id="prevImage" href="${picUrl(id - 1)}">prev</a>
-    ` :""}
-    ${id < pics.length - 1 ? /*html*/`
-      <a id="nextImage" href="${picUrl(id + 1)}">next</a>
-    ` :""}
+    <div id="nav_stack">
+      ${navLink("first", id, 0)}
+      ${navLink("previous", id, id - 1)}
+      ${navLink("next", id, id + 1)}
+      ${navLink("last", id, pics.length - 1)}
+    </div>
     <figure id="imageHolder"><img id="slide" src="${pic.source}" alt=""></figure>
-    <!-- <figure><img src="images/1.jpg" alt=""></figure> -->
     <article>
       <div class="details_title">
         <p>Title: </p><span>${pic.title}</span>
@@ -28,7 +41,10 @@ export function genPicPage(id) {
       <div class="details">
         <p>Size: </p><span>width: ${pic.size[0]}cm, height: ${pic.size[1]}cm</span>
       </div>
-      <div class="details">
+      <div class="details ${"price" in pic ? "" : "missing"}">
+        <p>Price: </p><span>${pic.price}</span>
+      </div>
+      <div class="details ${"about" in pic ? "" : "missing"}">
         <p>About: </p><span>${pic.about}</span>
       </div>
     </article>
