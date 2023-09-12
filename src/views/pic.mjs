@@ -29,7 +29,7 @@ export function genPicPage(id) {
   `, mainTpl(/*html*/`
     <div id="nav_stack">
       ${navLink("first", id, 0)}
-      ${navLink("previous", id, id - 1)}
+      ${navLink("prev", id, id - 1)}
       ${navLink("next", id, id + 1)}
       ${navLink("last", id, pics.length - 1)}
     </div>
