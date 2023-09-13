@@ -1,0 +1,89 @@
+
+/* gallery setting */
+
+main {
+    padding: 1rem 1rem 0 1rem;
+}
+
+img {
+    width: 100%;
+}
+
+.item {
+    margin: 0.5rem 0;
+}
+
+.quotes {
+    display: inline-block;
+    width: 100%;
+    background-color: hsl(0, 0%, 60%);
+    padding: 2.5rem 1.5rem;
+}
+
+.quotes__1 {
+    display: inline-block;
+    width: 100%;
+
+    background-color: hsl(0, 0%, 50%);
+    padding: 4rem 1.5rem;
+}
+
+.quotes__2 {
+    display: inline-block;
+    width: 100%;
+    background-color: hsl(0, 0%, 50%);
+    padding: 2rem 1.5rem;
+}
+
+.quotes__3 {
+    display: inline-block;
+    width: 100%;
+    background-color: hsl(0, 0%, 50%);
+    padding: 4rem 1.5rem;
+}
+
+/* overrides */
+
+.title {
+    font-weight: 600;
+}
+
+@media screen and (min-width: 750px) {
+    .galleryOne {
+        column-count: 2;
+        transition: ease-in 2s;
+    }
+
+    main::before {
+        position: fixed;
+        top: 72svh;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .galleryTwo {
+        column-count: 3;
+        transition: ease-in 2s;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .galleryThree {
+        column-count: 4;
+        transition: ease-in 2s;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .galleryFour {
+        column-count: 6;
+        transition: ease-in 2s;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .galleryFive {
+        column-count: 7;
+        transition: ease-in 2s;
+    }
+}
