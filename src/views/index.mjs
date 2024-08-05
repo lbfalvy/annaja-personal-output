@@ -48,7 +48,7 @@ export function genIndexPage() {
       ${imgLink("/images/24-the_one_with_scars.jpg")}
       ${imgLink("/images/25-androgyn.jpg")}
       <div class="quotes__1 item"><!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, fugit?</p> --></div>
-    ${imgLink("/images/26-the_dance_2.jpg")}
+      ${imgLink("/images/26-the_dance_2.jpg")}
       ${imgLink("/images/27-the_shit_on_dancer.jpg")}
       ${imgLink("/images/28-dancer_from_the_sahara.jpg")}
       <div class="quotes__3 item"><!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, fugit?</p> --></div>
