@@ -121,6 +121,92 @@ export const pics = [
     source: "/images/20-pillars.jpg",
     price: "800&euro;",
   },
+  // Freesh batch
+  {
+    title: "Minime",
+    size: [30, 30],
+    source: "/images/21-minime.jpg",
+  },
+  {
+    title: "Gun",
+    size: [70, 100],
+    source: "/images/22-gun.jpg"
+  },
+  {
+    title: "Still A Clown",
+    size: [100, 50],
+    source: "/images/23-still_a_clown.jpg"
+  },
+  {
+    title: "The one with scars",
+    size: [58, 74],
+    source: "/images/24-the_one_with_scars.jpg"
+  },
+  {
+    title: "Androgyn",
+    size: [50, 77],
+    source: "/images/25-androgyn.jpg"
+  },
+  {
+    title: "The Dance",
+    size: [1, 1],
+    source: "/images/26-the_dance_2.jpg"
+  },
+  {
+    title: "The Shit on Dancer",
+    size: [50, 77],
+    source: "/images/27-the_shit_on_dancer.jpg"
+  },
+  {
+    title: "Dancer from the Sahara",
+    size: [60, 50],
+    source: "/images/28-dancer_from_the_sahara.jpg"
+  },
+  {
+    title: "Dew, Stone, Dance",
+    size: [50, 50],
+    source: "/images/29-dew__stone__dance.jpg"
+  },
+  {
+    title: "Armour",
+    size: [70, 70],
+    source: "/images/30-armour.jpg"
+  },
+  {
+    title: "Sahara Dance",
+    size: [27, 48],
+    source: "/images/31-sahara_dance.jpg"
+  },
+  {
+    title: "Lonely Dance",
+    size: [30, 80],
+    source: "/images/32-lonely_dance.jpg"
+  },
+  {
+    title: "Woman's Shadow with Snail",
+    size: [60, 60],
+    source: "/images/33-woman_s_shadow_with_snail.jpg"
+  },
+  {
+    title: "For my Friends",
+    size: [50, 50],
+    source: "/images/34-for_my_friends.jpg"
+  },
+  {
+    title: "African Mask",
+    size: [70, 70],
+    source: "/images/35-african_mask_70x70.jpg"
+  },
+  {
+    title: "African Mask",
+    size: [40, 80],
+    source: "/images/36-african_mask_40x80.jpg"
+  },
+  {
+    title: "Arrows",
+    size: [50, 50],
+    source: "/images/37-arrows.jpg"
+  }
 ]
 
 /**

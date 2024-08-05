@@ -49,9 +49,8 @@ img {
 }
 
 @media screen and (min-width: 750px) {
-    .galleryOne {
+    #myGallery {
         column-count: 2;
-        transition: ease-in 2s;
     }
 
     main::before {
@@ -61,29 +60,25 @@ img {
 }
 
 @media screen and (min-width: 900px) {
-    .galleryTwo {
+    #myGallery {
         column-count: 3;
-        transition: ease-in 2s;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .galleryThree {
+    #myGallery {
         column-count: 4;
-        transition: ease-in 2s;
     }
 }
 
 @media screen and (min-width: 1500px) {
-    .galleryFour {
+    #myGallery {
         column-count: 6;
-        transition: ease-in 2s;
     }
 }
 
 @media screen and (min-width: 1800px) {
-    .galleryFive {
+    #myGallery {
         column-count: 7;
-        transition: ease-in 2s;
     }
 }
