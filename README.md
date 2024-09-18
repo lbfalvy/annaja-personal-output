@@ -1,3 +1,5 @@
+For better asset handling and dev experience, this project has been moved to [lbfalvy/personal-output-astro](https://github.com/lbfalvy/personal-output-astro)
+
 # Structure
 
 - `/static` gets copied over to the output directory, client-side data such as HTML, CSS and browser JS should be written here.
